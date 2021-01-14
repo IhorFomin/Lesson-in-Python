@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>Погода</title>
+
+    <script src="ell.js"></script>
+    <link rel="icon" type="image/png" href="/fanicon.png">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <input id="location" type="text" placeholder="Введите название страны и города..." required="" value="Нью Йорк, США">
+
+    <button id="show">Узнать погоду</button>
+
+    <div class="info"></div>
+    <script type="text/javascript">
+            async function display_weather(){
+                let place = document.getElementById('location').value;
+                //Вызиваем функцию get_weather из Python кода
+                let res = await eel.get_weather(place);
+                document.getElementById('info').innerHTML = res;
+            }
+    </script>
+
+
+</body>
+
+</html>
